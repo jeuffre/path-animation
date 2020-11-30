@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 1;
+  background-color: #fa7f72;
+  color: white;
+  padding: 2rem 8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  span{
+    font-size: 1.5rem;
+  }
+}
+
+.card{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
+.card svg{
+  height: 100%;
+  width: 100%;
+  display: block;
+  overflow: visible;
+  color: #389393;
+}
+
+.card svg path{
+  fill: #389393;
+}
