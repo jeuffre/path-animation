@@ -12,7 +12,7 @@ let finalPath
 let forward = true
 let running = false
 
-function createSvg(w, h){
+function createPath(w, h){
   startingPath = `M${w} 0 L${w} ${h} L${w} ${h} Q${w} ${h/2} ${w} 0 Z`
   finalPath = `M${w} 0 L${w} ${h} L0 ${h} Q0 ${h/2} 0 0 Z`
   forwardMiddle = `M${w} 0 L${w} ${h} L ${h} ${h} Q 0 ${h/2} ${h} 0 Z`
@@ -29,9 +29,10 @@ function createDOM(){
 }
 
 function setAttributes(){
-  const {innerWidth, innerHeight} = window
-  createSvg(innerWidth, innerHeight)
-  svg.setAttribute("viewBox", `0 0 ${innerWidth} ${innerHeight}`)
+  const {width, height} = card.getBoundingClientRect()
+  createPath(width, height)
+
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`)
   path.setAttribute("d",!forward ? finalPath : startingPath)
 }
 
